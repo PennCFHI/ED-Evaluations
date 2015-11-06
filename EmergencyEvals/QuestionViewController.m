@@ -22,6 +22,10 @@
     // Do any additional setup after loading the view.
     self.writtenEvaluation.delegate = self;
     self.MilestoneSlider.continuous = YES;
+<<<<<<< HEAD
+=======
+    self.MilestoneSlider.setNumber
+>>>>>>> master
     self.writtenEvaluation.hidden = YES;
     self.numberMilestonesCompleted = 0;
     self.competencyIndex = 0;
@@ -45,6 +49,7 @@
 }
 
 /*
+<<<<<<< HEAD
  #pragma mark - Navigation
  
  // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -53,6 +58,16 @@
  // Pass the selected object to the new view controller.
  }
  */
+=======
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+>>>>>>> master
 
 -(int)roundSliderValue:(float)x {
     if (x < 2.0) {
@@ -97,10 +112,17 @@
     //round slider value and change milestone text
     [self.MilestoneSlider setValue:[self roundSliderValue:self.MilestoneSlider.value] animated:NO];
     [self.MilestoneDescription setText: Competencies[self.competencyIndex][ (int)self.MilestoneSlider.value] ];
+<<<<<<< HEAD
     
     NSNumber *milestoneValue = [NSNumber numberWithInt:((int)self.MilestoneSlider.value)];
     [self.milestoneEvaluations replaceObjectAtIndex:(self.competencyIndex) withObject:milestoneValue];
     
+=======
+
+    NSNumber *milestoneValue = [NSNumber numberWithInt:((int)self.MilestoneSlider.value)];
+    [self.milestoneEvaluations replaceObjectAtIndex:(self.competencyIndex) withObject:milestoneValue];
+
+>>>>>>> master
     //NSLog(@"%@", Competencies[0]);
     //NSLog(@"milestoneslider value is %f", self.MilestoneSlider.value);
     //NSLog(@"currentComp %i", self.competencyIndex);
@@ -124,6 +146,7 @@
         NSString *writtenValue = [NSString stringWithString:(self.writtenEvaluation.text)];
         [self.milestoneEvaluations addObject:writtenValue];
         [self.competencyName setText:(@"Evaluations Complete. Thank you!")];
+<<<<<<< HEAD
         self.writtenEvaluation.hidden = YES;
         
         NSLog(@"milestoneEvals %@", self.milestoneEvaluations);
@@ -136,6 +159,20 @@
     else if (self.numberMilestonesCompleted == 11){
         //prepare for written evaluation
         [self.writtenEvaluation becomeFirstResponder];
+=======
+         self.writtenEvaluation.hidden = YES;
+        
+        NSLog(@"milestoneEvals %@", self.milestoneEvaluations);
+
+        
+        //hide next button and segue to finished screen
+        self.MilestoneNextButton.hidden = YES;
+
+    }
+    else if (self.numberMilestonesCompleted == 11){
+        //prepare for written evaluation
+       [self.writtenEvaluation becomeFirstResponder];
+>>>>>>> master
         self.MilestoneDescription.hidden = YES;
         self.MilestoneSlider.hidden = YES;
         self.writtenEvaluation.hidden = NO;
@@ -164,7 +201,11 @@
         [self.MilestoneDescription setText:Competencies[self.competencyIndex][(int)self.MilestoneSlider.value]];
         
     }
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> master
     NSLog(@"milestoneEvals %@", self.milestoneEvaluations);
     NSLog (@"number milestones completed %i", self.numberMilestonesCompleted);
     NSLog (@"competencyIndex %i is %@", self.competencyIndex, Competencies[self.competencyIndex][0]);
@@ -210,11 +251,19 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     //tap off keyboard
     [[self view] endEditing:TRUE];
+<<<<<<< HEAD
     
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     
+=======
+
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+
+>>>>>>> master
     [textField resignFirstResponder];
     
     return YES;

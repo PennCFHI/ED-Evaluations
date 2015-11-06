@@ -24,15 +24,4 @@ extern NSArray *CompetencyNine;
 extern NSArray *CompetencyTen;
 extern NSArray *CompetencyEleven;
 extern NSArray *CompetencyTwelve;
-<<<<<<< HEAD
 extern NSArray *Competencies;
-
-@interface Globals : NSObject{
-
-    
-}
-
-@end
-=======
-extern NSArray *Competencies;
->>>>>>> master
