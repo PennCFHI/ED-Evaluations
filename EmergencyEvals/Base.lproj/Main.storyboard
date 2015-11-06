@@ -3,6 +3,10 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9048"/>
+<<<<<<< HEAD
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+=======
+>>>>>>> master
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -87,6 +91,101 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ceX-xK-h5w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1118" y="212"/>
+        </scene>
+        <!--Question View Controller-->
+        <scene sceneID="W1C-R2-IV0">
+            <objects>
+                <viewController id="jQ7-mP-23y" customClass="QuestionViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="F34-oQ-01t"/>
+                        <viewControllerLayoutGuide type="bottom" id="p1J-0r-Rgs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zca-Go-odo" customClass="question">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bYd-G2-AD6">
+                                <rect key="frame" x="16" y="518" width="34" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="pressBack:" destination="jQ7-mP-23y" eventType="touchUpInside" id="xJL-Wj-903"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="11" translatesAutoresizingMaskIntoConstraints="NO" id="35r-XE-0dp">
+                                <rect key="frame" x="76" y="414" width="168" height="31"/>
+                                <animations/>
+                                <connections>
+                                    <action selector="changed:" destination="jQ7-mP-23y" eventType="valueChanged" id="h7D-eU-2GT"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nKh-ko-HrU">
+                                <rect key="frame" x="38" y="51" width="245" height="20.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cjg-ei-0h9">
+                                <rect key="frame" x="38" y="130" width="245" height="160"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write here..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YJu-z7-AQJ">
+                                <rect key="frame" x="38" y="130" width="245" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sx3-sI-GiH">
+                                <rect key="frame" x="272" y="518" width="32" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="b8t-Um-yYR"/>
+                                </constraints>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="nextMilestone:" destination="jQ7-mP-23y" eventType="touchUpInside" id="K0H-Zw-ZhM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nKh-ko-HrU" firstAttribute="top" secondItem="F34-oQ-01t" secondAttribute="bottom" constant="31" id="0cD-xk-pOR"/>
+                            <constraint firstItem="35r-XE-0dp" firstAttribute="leading" secondItem="zca-Go-odo" secondAttribute="leadingMargin" constant="62" id="Ars-eM-NLD"/>
+                            <constraint firstItem="cjg-ei-0h9" firstAttribute="leading" secondItem="zca-Go-odo" secondAttribute="leadingMargin" constant="22" id="E4H-FQ-XMH"/>
+                            <constraint firstItem="cjg-ei-0h9" firstAttribute="top" secondItem="F34-oQ-01t" secondAttribute="bottom" constant="110" id="FSI-0S-npS"/>
+                            <constraint firstItem="nKh-ko-HrU" firstAttribute="leading" secondItem="zca-Go-odo" secondAttribute="leadingMargin" constant="22" id="GeH-WQ-vZH"/>
+                            <constraint firstItem="p1J-0r-Rgs" firstAttribute="top" secondItem="bYd-G2-AD6" secondAttribute="bottom" constant="20" id="H7a-5c-AsW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sx3-sI-GiH" secondAttribute="trailing" id="Qb0-yJ-DUp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cjg-ei-0h9" secondAttribute="trailing" constant="21" id="QtE-ao-idh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YJu-z7-AQJ" secondAttribute="trailing" constant="21" id="Y9L-Dc-eOo"/>
+                            <constraint firstItem="p1J-0r-Rgs" firstAttribute="top" secondItem="35r-XE-0dp" secondAttribute="bottom" constant="124" id="gRy-NG-wpD"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="bYd-G2-AD6" secondAttribute="leading" id="hM1-Rz-iIF"/>
+                            <constraint firstItem="YJu-z7-AQJ" firstAttribute="top" secondItem="F34-oQ-01t" secondAttribute="bottom" constant="110" id="j8d-qb-0Md"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nKh-ko-HrU" secondAttribute="trailing" constant="21" id="p3N-5G-U93"/>
+                            <constraint firstItem="p1J-0r-Rgs" firstAttribute="top" secondItem="sx3-sI-GiH" secondAttribute="bottom" constant="20" id="rQ3-f1-zwj"/>
+                            <constraint firstItem="p1J-0r-Rgs" firstAttribute="top" secondItem="cjg-ei-0h9" secondAttribute="bottom" constant="278" id="rWh-UB-QNx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="35r-XE-0dp" secondAttribute="trailing" constant="62" id="t5Z-x9-eAS"/>
+                            <constraint firstItem="YJu-z7-AQJ" firstAttribute="leading" secondItem="zca-Go-odo" secondAttribute="leadingMargin" constant="22" id="tIH-vg-99x"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="CompetencyName" destination="nKh-ko-HrU" id="TrU-sN-FpC"/>
+                        <outlet property="MilestoneDescription" destination="cjg-ei-0h9" id="nKB-pR-nVV"/>
+                        <outlet property="MilestoneNextButton" destination="sx3-sI-GiH" id="5gs-73-DCR"/>
+                        <outlet property="MilestoneSlider" destination="35r-XE-0dp" id="7pS-sj-Vz7"/>
+                        <outlet property="previousButton" destination="bYd-G2-AD6" id="kUq-61-km0"/>
+                        <outlet property="writtenEvaluation" destination="YJu-z7-AQJ" id="fS8-cP-ymT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Df-ns-HtY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-295" y="980"/>
         </scene>
     </scenes>
 </document>

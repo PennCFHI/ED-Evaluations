@@ -17,7 +17,11 @@
 
 @property (weak, nonatomic) IBOutlet UITextView *MilestoneDescription;
 
+<<<<<<< HEAD
+@property (strong, nonatomic) NSArray *numbers;
+=======
 @property (strong, nonatomic) NSArray *numbers; 
+>>>>>>> master
 
 @property (weak, nonatomic) IBOutlet UIButton *MilestoneNextButton;
 
@@ -31,6 +35,11 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *previousButton;
 
+<<<<<<< HEAD
+@property (strong, nonatomic) NSArray *compArray;
+
+=======
+>>>>>>> master
 -(IBAction)changed:(id)sender;
 
 -(int)roundSliderValue:(float)x;
