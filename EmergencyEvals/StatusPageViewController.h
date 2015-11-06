@@ -16,7 +16,7 @@ BOOL running;
 @property (strong, nonatomic) UILabel *timeLabel; //lbl in tutorial code
 @property (strong, nonatomic) NSTimer *stopTimer;
 @property (strong, nonatomic) NSDate *startDate;
-
+@property (strong, nonatomic) NSMutableArray *residentList;
 
 -(IBAction)startPressed:(id)sender;
 -(void)updateTimer;

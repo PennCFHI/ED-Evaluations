@@ -15,22 +15,23 @@
 }
 
 -(void)viewDidLoad{
-    self.timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(100,100,100,100)];
-    [self.timeLabel setTextColor:[UIColor greenColor]];
-    [self.timeLabel setBackgroundColor:[UIColor blackColor]];
+    self.timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(20,140,self.view.frame.size.width - 40,30)];
     [self.timeLabel setText:@"QR Code Reader is not yet running..."];
-    [self.timeLabel setFont:[UIFont systemFontOfSize:15.0]];
-    [self.timeLabel setTextAlignment: NSTextAlignmentLeft];
+    [self.timeLabel setFont:[UIFont systemFontOfSize:20.0]];
+    [self.timeLabel setTextAlignment: NSTextAlignmentCenter];
     [self.view addSubview:self.timeLabel];
 
-    self.startStopButton = [[UIButton alloc] initWithFrame:CGRectMake(200,200,200,200)];
-    [self.startStopButton setTitle:@"Scan" forState:UIControlStateNormal];
+    self.startStopButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 200/2, self.view.frame.size.height - 60, 200, 50)];
+    [self.startStopButton setTitle:@"Start Shift" forState:UIControlStateNormal];
     [self.startStopButton setBackgroundColor:[UIColor blackColor]];
     [self.startStopButton addTarget:self action:@selector(startPressed:) forControlEvents:UIControlEventTouchDown];
     [self.view addSubview:self.startStopButton];
 }
 
 -(IBAction)startPressed:(id)sender{
+    NSLog(@"Start Shift Pressed");
+    NSLog(@"resident list: %@", self.residentList);
+    
     
 }
 
