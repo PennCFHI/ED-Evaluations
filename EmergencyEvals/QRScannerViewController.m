@@ -68,7 +68,7 @@
                                    action:@selector(continueToStartShift:)];
     self.navigationItem.rightBarButtonItem = continueButton;
     
-    
+    self.residentQRList = [[NSMutableArray alloc] init];
     
     
 }
@@ -101,15 +101,12 @@
     
     else
     {
-    int i = 0 ;
-    while (i < _residentQRList.count) {
-        NSLog(@"QR Codes Gained: %@", _residentQRList[i]);
-        i++;
-    };
+ 
+    NSLog(@"QR Codes Gained: %@", _residentQRList);
     
     [self performSegueWithIdentifier:@"scanToStatus" sender:self];
         
-    NSLog(@"continue button pressed with scan");
+    NSLog(@"continue button pressed with scanned QR Code ");
     }
     
 }
@@ -154,13 +151,16 @@
         AVMetadataMachineReadableCodeObject *metadataObj = [metadataObjects objectAtIndex:0];
         if ([[metadataObj type] isEqualToString:AVMetadataObjectTypeQRCode]) {
             [_scannerStatus performSelectorOnMainThread:@selector(setText:) withObject:[metadataObj stringValue] waitUntilDone:YES];
+            //adds data from QR code onto array residentQRList
+            [self.residentQRList addObject:[metadataObj stringValue]];
             [self performSelectorOnMainThread:@selector(stopReading) withObject:nil waitUntilDone:NO];
             [_scannerCommand performSelectorOnMainThread:@selector(setTitle:) withObject:@"Start" waitUntilDone:NO];
             _isReading = NO;
         }
     }
     
-    [self.residentQRList addObject:self.scannerStatus.text];
+
+    
     
     
 }
@@ -178,8 +178,12 @@
     
     if([[segue identifier] isEqualToString:@"scanToStatus"]){
         
-        NSLog(@"segue prepared for scanToStatus"); 
-        
+       
+        StatusPageViewController *statusPage = [segue destinationViewController];
+        statusPage.residentList = [[NSMutableArray alloc] initWithArray:self.residentQRList];
+         NSLog(@"self.residentQRList = %@", self.residentQRList);
+        NSLog(@"statusPage.resdientList = %@", statusPage.residentList);
+
     }
     
 }

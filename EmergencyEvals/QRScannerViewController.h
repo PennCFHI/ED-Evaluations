@@ -14,6 +14,7 @@
 #import <CoreGraphics/CoreGraphics.h>
 #import <QuartzCore/QuartzCore.h>
 #import <AVFoundation/AVFoundation.h>
+#import "StatusPageViewController.h"
 
 
 @class PFUser;
